@@ -3,21 +3,48 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container  maxWidth="sm">
+        <Box textAlign="center" mt={5}>
+          <Switch>
+            <Route path="/" exact>
+              <Typography variant="h2" fontWeight="bold" color='#0096c7'>
+                Your Pet Feeder
+              </Typography>
+              <Home />
+            </Route>
+            <Route path="/user">
+              <Profile />
+            </Route>
+            <Route path="/registration">
+              <Registration />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/metadata">
+              <Metadata />
+            </Route>
+            <Route path="/devices">
+              <Devices />
+            </Route>
+            <Route path="/device">
+              <Device />
+            </Route>
+            <Route path="/device_meta">
+              <DeviceMetadata />
+            </Route>
+            <Route path="/pet">
+              <Pet />
+            </Route>
+            <Route path="/pet_plan">
+              <PetPlan />
+            </Route>
+          </Switch>
+        </Box>
+      </Container>
+    </Router>
+  );
   );
 }
 
