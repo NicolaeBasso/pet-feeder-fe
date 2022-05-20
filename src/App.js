@@ -1,48 +1,70 @@
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import petContainer from './containers/petContainer'
+import petFormContainer from './containers/petFormContainer'
+import PetFeedingsShowContainer from './containers/PetFeedingsShowContainer'
+import NewFeedingContainer from './containers/NewFeedingContainer'
+
+import OwnersContainer from './containers/OwnersContainer'
+import OwnersFormContainer from './containers/OwnersFormContainer'
+
+import NavBar from './components/NavBar';
+
+import Signup from './components/auth/Signup';
+import Login from './components/auth/Login';
+
+import ProtectedRoute from './components/ProtectedRoute'
+import withAuth from './components/auth/withAuth'
+
+
 
 function App() {
+
   return (
-    <Router>
-      <Container  maxWidth="sm">
-        <Box textAlign="center" mt={5}>
-          <Switch>
-            <Route path="/" exact>
-              <Typography variant="h2" fontWeight="bold" color='#0096c7'>
-                Your Pet Feeder
-              </Typography>
-              <Home />
-            </Route>
-            <Route path="/user">
-              <Profile />
-            </Route>
-            <Route path="/registration">
-              <Registration />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/metadata">
-              <Metadata />
-            </Route>
-            <Route path="/devices">
-              <Devices />
-            </Route>
-            <Route path="/device">
-              <Device />
-            </Route>
-            <Route path="/device_meta">
-              <DeviceMetadata />
-            </Route>
-            <Route path="/pet">
-              <Pet />
-            </Route>
-            <Route path="/pet_plan">
-              <PetPlan />
-            </Route>
-          </Switch>
-        </Box>
-      </Container>
-    </Router>
+    <div className="App">
+
+     <Router>
+       <NavBar />
+
+       <Routes>
+          <Route 
+            exact path="/">
+             <petContainer />
+          </Route>
+          <Route 
+            exact path="/pet/new" 
+            render={(routerProps) => <petFormContainer 
+            anotherProp={"additional props like this"} {...routerProps}/>} />
+          <Route 
+            exact path="/pet/:pet_id/plan" 
+            render={(routerProps) => <NewFeedingContainer 
+            someOwnerProp={"how do I get this?"} {...routerProps}/>} />
+          <Route 
+            exact path="/users/"> 
+              <OwnersContainer />
+          </Route>
+          <Route 
+            exact path="/pet/:pet_id" 
+            render={(routerProps) => <PetFeedingsShowContainer {...routerProps} />} /> 
+          <Route 
+            exact path="/user/new" 
+            render={(routerProps) => <OwnersFormContainer {...routerProps}/>} />
+          <Route 
+            exact path="user/register" component={Signup} />
+          <Route 
+            exact path="user/login" component={Login} />
+          <Route 
+            exact path="/protected_route" component={withAuth(ProtectedRoute)} />
+          <Route exact path="user/devices" component={withAuth()}/>
+          <Route exact path="device/metadata" component={withAuth()}/>
+          <Route exact path="user/metadata" component={withAuth()}/>
+       </Routes>
+     </Router>
+    </div>
   );
 }
 
