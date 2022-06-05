@@ -14,7 +14,7 @@ class NewFeedingContainer extends Component {
         errors: {}
     }
 
-    componentDidMount(){
+    componentDidMount() {
         fetch("http://localhost:3001/owners", {
             method: "get",
             headers: {
@@ -22,17 +22,17 @@ class NewFeedingContainer extends Component {
                 'Content-Type': 'application/json'
             }
         })
-        .then(response => response.json())
-        .then(ownersJson => {
-            this.setState({
-                owners: ownersJson,
+            .then(response => response.json())
+            .then(ownersJson => {
+                this.setState({
+                    owners: ownersJson,
+                })
             })
-        })
 
     }
 
     handleOnChange = (e) => {
-        
+
         const target = e.target;
         const name = target.name
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -55,35 +55,35 @@ class NewFeedingContainer extends Component {
         }).then(feedingJson => {
             this.props.history.push(`/pets/${this.props.match.params.pet_id}`)
         })
-        .catch(errors => {
-            console.log("these errors happened", errors)
-            this.setState({
-                errors: errors
+            .catch(errors => {
+                console.log("these errors happened", errors)
+                this.setState({
+                    errors: errors
+                })
             })
-        })
 
-    
+
 
     }
 
-    render(){
+    render() {
         const { owners } = this.state;
 
         let ownersList = owners.length > 0
-		&& owners.map((owner, i) => {
-		return (
-			<option key={i} value={owner.id}>{owner.name}</option>
-		)
-	}, this);
+            && owners.map((owner, i) => {
+                return (
+                    <option key={i} value={owner.id}>{owner.name}</option>
+                )
+            }, this);
 
-        return(
+        return (
             <form
-                onSubmit={this.handleSubmit} 
+                onSubmit={this.handleSubmit}
                 className="max-w-2xl w-10/12 mx-auto mt-20 shadow-lg px-4 py-6">
                 <h1 className="text-center text-2xl font-semibold pb-4">Add a Feeding</h1>
 
                 <fieldset className="mt-3">
-                    <label 
+                    <label
                         htmlFor="description"
                         className="block mb-2 text-sm text-gray-600 dark:text-gray-400">Details</label>
                     <textarea
@@ -93,29 +93,29 @@ class NewFeedingContainer extends Component {
                         name="description"
                         id="description"
                         value={this.state.description}
-                        placeholder="Feeding Details" 
+                        placeholder="Feeding Details"
                     ></textarea>
                 </fieldset>
                 <fieldset className="flex space-x-5 mt-3">
-                    <label 
+                    <label
                         htmlFor="category"
                         className="block">Select a Category</label>
-                    <select 
+                    <select
                         name="category"
                         value={this.state.category}
                         onChange={this.handleOnChange}
                         id="category">
-                            <option value="Morning">Morning</option>
-                            <option value="Evening">Evening</option>
-                            <option value="Special">Special</option>
+                        <option value="Morning">Morning</option>
+                        <option value="Evening">Evening</option>
+                        <option value="Special">Special</option>
                     </select>
 
                 </fieldset>
                 <fieldset className="flex space-x-5 mt-3">
-                    <label 
+                    <label
                         htmlFor="ownerId"
                         className="block">Who Fed/is Feeding?</label>
-                    <select 
+                    <select
                         name="ownerId"
                         value={this.state.ownerId}
                         onChange={this.handleOnChange}
@@ -125,18 +125,18 @@ class NewFeedingContainer extends Component {
 
                 </fieldset>
                 <fieldset className="mt-3">
-                    <label 
-                        htmlFor="completed" 
+                    <label
+                        htmlFor="completed"
                         className="block">Completed?</label>
-                    <input 
+                    <input
                         name="completed"
                         type="checkbox"
                         id="completed"
                         checked={this.state.completed}
                         onChange={this.handleOnChange}
-                        />
+                    />
                 </fieldset>
-                <button 
+                <button
                     type="submit"
                     className="w-full mt-6 bg-indigo-500 hover:bg-indigo-800 transition-all duration-200 text-white font-semibold p-3 rounded-md">
                     Add Feeding

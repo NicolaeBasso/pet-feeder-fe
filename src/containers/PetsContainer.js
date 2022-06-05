@@ -15,7 +15,7 @@ class PetsContainer extends Component {
 
 
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchPets();
         // Replaced the below fetch request with the returned fetchPets function mapped in MapDispatchtoProps
 
@@ -37,12 +37,12 @@ class PetsContainer extends Component {
 
     }
 
-    render(){
+    render() {
         return (
             <section className="max-w-2xl w-10/12 mx-auto mt-20">
                 {this.props.loadingState !== "successful" ?
-                (<Loader />) :
-                (<PetList pets={this.props.pets} />) }
+                    (<Loader />) :
+                    (<PetList pets={this.props.pets} />)}
             </section>
         )
 

@@ -26,46 +26,45 @@ function App() {
 
   return (
     <div className="App">
-     <Router>
-       <Container  maxWidth="large">
-         <NavBar />
-         <Box textAlign="center" mt={5}>
-           <Routes>
-              <Route path="/" exact>
-                <h1>Hello</h1>
-                <PetsContainer />
-              </Route>
+      <Router>
+        <Container maxWidth="large">
+          <NavBar />
+          <Box textAlign="center" mt={5}>
+            <Routes>
+              <Route path="/" exact element={<PetsContainer />} />
+
+              {/* </Route> */}
               <Route
                 exact path="/pet/new"
-                render={(routerProps) => <PetsFormContainer
-                anotherProp={"additional props like this"} {...routerProps}/>} />
+                element={(routerProps) => <PetsFormContainer
+                  anotherProp={"additional props like this"} {...routerProps} />} />
               <Route
                 exact path="/pet/:pet_id/plan"
-                render={(routerProps) => <NewFeedingContainer
-                someOwnerProp={"how do I get this?"} {...routerProps}/>} />
+                element={(routerProps) => <NewFeedingContainer
+                  someOwnerProp={"how do I get this?"} {...routerProps} />} />
               <Route
-                exact path="/users/">
-                  <OwnersContainer />
-              </Route>
+                exact path="/users/" element={<OwnersContainer />} />
+
+              {/* </Route> */}
               <Route
                 exact path="/pet/:pet_id"
-                render={(routerProps) => <PetFeedingsShowContainer {...routerProps} />} />
+                element={(routerProps) => <PetFeedingsShowContainer {...routerProps} />} />
               <Route
                 exact path="/user/new"
-                render={(routerProps) => <OwnersFormContainer {...routerProps}/>} />
+                element={(routerProps) => <OwnersFormContainer {...routerProps} />} />
               <Route
                 exact path="user/register" component={Signup} />
               <Route
                 exact path="user/login" component={Login} />
               <Route
                 exact path="/protected_route" component={withAuth(ProtectedRoute)} />
-              <Route exact path="user/devices" component={withAuth()}/>
-              <Route exact path="device/metadata" component={withAuth()}/>
-              <Route exact path="user/metadata" component={withAuth()}/>
-           </Routes>
-         </Box>
-       </Container>
-     </Router>
+              <Route exact path="user/devices" component={withAuth()} />
+              <Route exact path="device/metadata" component={withAuth()} />
+              <Route exact path="user/metadata" component={withAuth()} />
+            </Routes>
+          </Box>
+        </Container>
+      </Router>
     </div>
   );
 }
