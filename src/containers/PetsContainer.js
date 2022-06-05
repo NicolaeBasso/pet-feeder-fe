@@ -4,8 +4,6 @@ import { fetchPets } from '../actions/pets';
 import Loader from '../components/Loader';
 import PetList from '../components/PetList'
 
-
-
 class PetsContainer extends Component {
 
     // state = {
@@ -15,12 +13,12 @@ class PetsContainer extends Component {
 
     // Above state is no longer needed because it's being provided as props now through the MapStatetoProps function below
 
-    
+
 
     componentDidMount(){
         this.props.fetchPets();
         // Replaced the below fetch request with the returned fetchPets function mapped in MapDispatchtoProps
-        
+
         // fetch("http://localhost:3001/pets", {
         //     method: "get",
         //     headers: {
@@ -36,13 +34,13 @@ class PetsContainer extends Component {
         //         loading: false
         //     })
         // })
-        
+
     }
 
     render(){
         return (
             <section className="max-w-2xl w-10/12 mx-auto mt-20">
-                {this.props.loadingState !== "successful" ? 
+                {this.props.loadingState !== "successful" ?
                 (<Loader />) :
                 (<PetList pets={this.props.pets} />) }
             </section>
@@ -50,7 +48,6 @@ class PetsContainer extends Component {
 
     }
 }
-
 
 const mapStateToProps = (state) => {
     return {

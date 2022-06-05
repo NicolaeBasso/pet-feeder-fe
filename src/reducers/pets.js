@@ -1,10 +1,8 @@
 import {
-    START_LOADING_PETS, 
+    START_LOADING_PETS,
     SUCCESSFULLY_LOADED_PETS,
     SUCCESSFULLY_CREATED_PET,
-    START_LOADING_PET_FEEDINGS,
-    SUCCESSFULLY_LOADED_PET_FEEDINGS,
-    FAILED_LOADING_PETS } from '../actions';
+    SUCCESSFULLY_LOADED_PET_FEEDINGS } from '../actions';
 
 const initialState = {
     loadingState: "notStarted",
@@ -14,12 +12,12 @@ const initialState = {
 
 // IMPORTANT! This reducer gets functionality by being added to the combineReduer (RootReducer)
 
-export default function petsReducer(state = initialState, 
+export default function petsReducer(state = initialState,
     action) {
         switch(action.type){
             case START_LOADING_PETS:
                 return {
-                    ...state, 
+                    ...state,
                     loadingState: 'inProgress'
                 };
             case SUCCESSFULLY_LOADED_PETS:
@@ -35,12 +33,12 @@ export default function petsReducer(state = initialState,
                 };
             case SUCCESSFULLY_LOADED_PET_FEEDINGS:
                 return {
-                    
+
                 };
-    
+
             default:
                 return state;
         }
-   
+
 
 }

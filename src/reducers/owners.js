@@ -1,8 +1,7 @@
 import {
-    START_LOADING_OWNERS, 
+    START_LOADING_OWNERS,
     SUCCESSFULLY_LOADED_OWNERS,
     SUCCESSFULLY_CREATED_OWNER,
-    FAILED_LOADING_OWNERS, 
     SUCCESSFULLY_REMOVED_OWNER} from '../actions';
 
 const initialState = {
@@ -13,12 +12,12 @@ const initialState = {
 
 // IMPORTANT! This reducer gets functionality by being added to the combineReduer (RootReducer)
 
-export default function ownersReducer(state = initialState, 
+export default function ownersReducer(state = initialState,
     action) {
         switch(action.type){
             case START_LOADING_OWNERS:
                 return {
-                    ...state, 
+                    ...state,
                     loadingOwnerState: 'inProgress'
                 };
             case SUCCESSFULLY_LOADED_OWNERS:
@@ -36,7 +35,7 @@ export default function ownersReducer(state = initialState,
                 return {
                     ...state, //hopefully this will take the ownerslist array and return a new array with only owners
                     ownerList: state.ownerList.filter(owner => owner.id !== action.payload),
-                    errors: {}   
+                    errors: {}
                 }
 
             default:
