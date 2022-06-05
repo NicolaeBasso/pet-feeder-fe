@@ -5,9 +5,12 @@ import { users } from '../constants';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { login, logout } from '../reducers/userSlice';
 
 export const Login = () => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [logged, setLogged] = useState(localStorage.getItem('logged') === 'true');
@@ -22,9 +25,11 @@ export const Login = () => {
       if (user.email === email && user.password === password) {
         localStorage.setItem('logged', 'true');
         setLogged(true);
+        dispatch(login({ email: user.email }));
       } else {
         localStorage.setItem('logged', 'false');
         setLogged(false);
+        dispatch(logout());
       }
     });
   };
