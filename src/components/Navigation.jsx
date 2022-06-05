@@ -1,7 +1,6 @@
-import './App.css';
 import { Link } from "react-router-dom";
 
-function App() {
+export const Navigation = () => {
   return (
     <div className="App">
       <p className="text-red-800">
@@ -27,5 +26,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
