@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   email: '',
-  logged: localStorage.getItem('logged' === 'true'),
+  logged: localStorage.getItem('logged' === 'true') ? true : false,
   pets: [],
   devices: []
 };
@@ -19,9 +19,11 @@ export const userSlice = createSlice({
       console.log(email);
 
       state.email = email;
+      state.logged = true;
     },
     logout: (state) => {
       state = { ...initialState };
+      state.logged = false;
     }
   }
 });
