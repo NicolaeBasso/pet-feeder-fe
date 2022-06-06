@@ -5,7 +5,7 @@ export default configureStore({
   reducer: {
     user: userReducer
     // pet: petReducer,
-    // device: deviceReducer,
+    // device: deviceReducer
     // plan: planReducer,
   }
 });
