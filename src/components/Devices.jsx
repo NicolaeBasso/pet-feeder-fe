@@ -16,25 +16,73 @@ export const Devices = () => (
       }}>
       <Container maxWidth={false}>
         <Box sx={{ pt: 3 }}>
-          <Grid container spacing={3}>
+          <Grid container spacing={2} ml={12}>
             <Grid lg={4} md={6} xs={12}>
               <img src={deviceImg} />
-              <Box className="deviceName" mb={3} mt={3} width="30%">
+              <Box className="deviceName" mb={3} mt={3} width="36%">
                 <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
                   Bellas feeder
                 </Typography>
               </Box>
-              <Box mt={3} width="30%">
+              <Box ml={12} mt={3} width="30%">
                 <Button fullWidth variant="contained" type="submit">
                   Turn on
                 </Button>
               </Box>
-              <Box mt={3} width="30%">
+              <Box ml={12} mt={3} width="30%">
                 <Button fullWidth variant="contained" type="submit">
                   See plan
                 </Button>
               </Box>
-              <Box mt={3} width="30%">
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See pet
+                </Button>
+              </Box>
+            </Grid>
+
+            <Grid lg={4} md={6} xs={12}>
+              <img src={deviceImg} />
+              <Box className="deviceName" mb={3} mt={3} width="36%">
+                <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
+                  Bellas feeder
+                </Typography>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  Turn on
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See plan
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See pet
+                </Button>
+              </Box>
+            </Grid>
+
+            <Grid lg={4} md={6} xs={12}>
+              <img src={deviceImg} />
+              <Box className="deviceName" mb={3} mt={3} width="36%">
+                <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
+                  Bellas feeder
+                </Typography>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  Turn on
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See plan
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
                 <Button fullWidth variant="contained" type="submit">
                   See pet
                 </Button>
@@ -47,9 +95,7 @@ export const Devices = () => (
             display: 'flex',
             justifyContent: 'center',
             pt: 3
-          }}>
-          <Pagination color="primary" count={3} size="small" />
-        </Box>
+          }}></Box>
       </Container>
     </Box>
   </>
