@@ -44,7 +44,7 @@ transform: translateX(-50%);
 .nav {
 	/* background-color: rgb(33, 140, 247); */
 	background-color: transparent;
-	
+	margin-left:20%;
 	font-size: 2em;
 	font-weight: 300;
   display: inline-flex;
