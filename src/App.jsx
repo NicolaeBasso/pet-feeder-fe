@@ -11,9 +11,9 @@ import { Box } from '@mui/system';
 function App(props) {
   const state = useSelector((state) => state);
 
-  useEffect(() => {
-    console.log('state in App = ', state);
-  }, [state]);
+  setInterval(() => {
+    localStorage.setItem('state', JSON.stringify(state));
+  }, 1000);
 
   return <div className="App"></div>;
 }

@@ -10,11 +10,16 @@ import { Plans } from './components/Plans';
 import { Login } from './components/Login';
 import { Logout } from './components/Logout';
 import { Provider } from 'react-redux';
+import { UUIDGeneratorBrowser } from './utils';
 import store from './store';
 
 import { createRoot } from 'react-dom/client';
 const container = document.getElementById('app');
 const root = createRoot(container);
+
+console.log(UUIDGeneratorBrowser());
+console.log(UUIDGeneratorBrowser());
+console.log(UUIDGeneratorBrowser());
 
 root.render(
   <Provider store={store}>

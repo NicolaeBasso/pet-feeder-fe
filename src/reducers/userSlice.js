@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { UUIDGeneratorBrowser } from '../utils';
 
 const initialState = {
   email: '',
-  logged: localStorage.getItem('logged' === 'true') ? true : false,
-  pets: [],
-  devices: []
+  logged: localStorage.getItem('logged' === 'true') ? true : false
 };
 
 export const userSlice = createSlice({
@@ -12,15 +11,12 @@ export const userSlice = createSlice({
   initialState: { ...initialState },
   reducers: {
     login: (state, action) => {
-      const { email } = { ...action.payload };
-
-      console.log(action);
-
-      console.log(email);
+      const { email } = { ...action.payload, id: UUIDGeneratorBrowser() };
 
       state.email = email;
       state.logged = true;
     },
+
     logout: (state) => {
       state = { ...initialState };
       state.logged = false;
