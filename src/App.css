@@ -33,11 +33,18 @@ transform: translateX(-50%);
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.menuButton {
+  background-image: linear-gradient(to bottom, #d7ebf5, #e9dde7);
+  border-bottom: 1px solid #0003;
+	box-shadow: 0 0 32px #0003;
+  
+}
+
 .nav {
 	/* background-color: rgb(33, 140, 247); */
-	background-image: linear-gradient(to bottom, #d7ebf5, #e9dde7);
-	border-bottom: 1px solid #0003;
-	box-shadow: 0 0 32px #0003;
+	background-color: transparent;
+	
 	font-size: 2em;
 	font-weight: 300;
   display: inline-flex;

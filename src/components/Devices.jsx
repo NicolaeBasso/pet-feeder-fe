@@ -39,28 +39,9 @@ export const Devices = () => (
                   See pet
                 </Button>
               </Box>
-            </Grid>
-
-            <Grid lg={4} md={6} xs={12}>
-              <img src={deviceImg} />
-              <Box className="deviceName" mb={3} mt={3} width="36%">
-                <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
-                  Bellas feeder
-                </Typography>
-              </Box>
               <Box ml={12} mt={3} width="30%">
                 <Button fullWidth variant="contained" type="submit">
-                  Turn on
-                </Button>
-              </Box>
-              <Box ml={12} mt={3} width="30%">
-                <Button fullWidth variant="contained" type="submit">
-                  See plan
-                </Button>
-              </Box>
-              <Box ml={12} mt={3} width="30%">
-                <Button fullWidth variant="contained" type="submit">
-                  See pet
+                  See location
                 </Button>
               </Box>
             </Grid>
@@ -85,6 +66,40 @@ export const Devices = () => (
               <Box ml={12} mt={3} width="30%">
                 <Button fullWidth variant="contained" type="submit">
                   See pet
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See location
+                </Button>
+              </Box>
+            </Grid>
+
+            <Grid lg={4} md={6} xs={12}>
+              <img src={deviceImg} />
+              <Box className="deviceName" mb={3} mt={3} width="36%">
+                <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
+                  Bellas feeder
+                </Typography>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  Turn on
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See plan
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See pet
+                </Button>
+              </Box>
+              <Box ml={12} mt={3} width="30%">
+                <Button fullWidth variant="contained" type="submit">
+                  See location
                 </Button>
               </Box>
             </Grid>
