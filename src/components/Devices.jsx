@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Button, Container, Grid, Pagination, Typography } from '@mui/material';
 import DeviceListItem from './DeviceListItem';
 import deviceImg from '../icons/device.png';
+import { useSelector, useDispatch } from 'react-redux';
 
 // export const Devices = () => (
 //   <>
@@ -27,13 +28,17 @@ import deviceImg from '../icons/device.png';
 //   </>
 // );
 
-const Devices = ({ devices }) => {
+export const Devices = () => {
+  const devices = useSelector((state) => state.device.devices);
+
+  console.log(devices);
+
   return (
     <>
       <div>
-        <h1 className="text-3xl font-semibold pb-4 text-green-700">Pets</h1>
+        <h1 className="text-3xl font-semibold pb-4 text-green-700">Devices</h1>
         <ul className="">
-          {devices.map((device) => (
+          {devices?.map((device) => (
             <DeviceListItem key={device.id} device={device} />
           ))}
         </ul>
@@ -41,5 +46,3 @@ const Devices = ({ devices }) => {
     </>
   );
 };
-
-export default Devices;

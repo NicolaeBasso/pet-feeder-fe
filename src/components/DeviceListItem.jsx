@@ -1,8 +1,19 @@
 import React from 'react';
 import deviceImg from '../icons/device.png';
 import { Box, Button, Container, Grid, Pagination, Typography } from '@mui/material';
+import { useState } from 'react';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateDevice } from '../reducers/deviceSlice';
+import { DEFAULT_LOCATIONS, DEFAULT_PLANS } from '../constants';
 
 const DeviceListItem = ({ device }) => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="bg-green-200 max-w-xl w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">
@@ -10,12 +21,55 @@ const DeviceListItem = ({ device }) => {
           <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
             {device.name}
           </li>
-          <li className="text-gray-600 pb-3 m-2 px-3 mb-1">{device.on}</li>
+          <li
+            className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3"
+            onChange={() => dispatch(updateDevice({ ...device, power: !device.power }))}>
+            <FormControlLabel
+              sx={{
+                display: 'block'
+              }}
+              control={<Switch checked={device.power} name="loading" color="primary" />}
+              label="Power"
+            />
+          </li>
+          <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
+            <Autocomplete
+              value={device.location}
+              disablePortal
+              id="combo-box-demo"
+              options={DEFAULT_LOCATIONS}
+              onChange={(e) => {
+                dispatch(updateDevice({ ...device, location: e.target.textContent }));
+              }}
+              sx={{ width: 300 }}
+              renderInput={(params) => {
+                console.log(params);
+                return <TextField {...params} label="Location" />;
+              }}
+            />
+          </li>
+          <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
+            <Autocomplete
+              value={device.plan?.name}
+              disablePortal
+              id="combo-box-demo"
+              options={DEFAULT_PLANS.map((plan) => plan.name)}
+              onChange={(e) => {
+                console.log(e);
+                dispatch(updateDevice({ ...device, plan: e.target.textContent }));
+              }}
+              sx={{ width: 300 }}
+              renderInput={(params) => {
+                console.log(params);
+                return <TextField {...params} label="Plan" />;
+              }}
+            />
+          </li>
         </div>
         <div className="md:px-2 mt-3 md:mt-0 items-center flex">
           <Link
             className="inline-block bg-indigo-800 border-solid border-2 border-light-blue-500 mx-5 mb-4 px-2 py-2 rounded-md"
-            to={`/pets/${device.id}/`}>
+            to={`/plans/${device.id}/`}>
             <button className="text-white capitalize text-m m-2 px-3 ">See plan</button>
           </Link>
         </div>

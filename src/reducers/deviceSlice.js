@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UUIDGeneratorBrowser, DEFAULT_LOCATION, DEFAULT_PLAN } from '../utils';
+import { UUIDGeneratorBrowser } from '../utils';
+import { DEFAULT_LOCATION, DEFAULT_DEVICES } from '../constants';
 
 const initialState = {
-  devices: []
+  devices: DEFAULT_DEVICES
 };
 
 export const deviceSlice = createSlice({
@@ -10,13 +11,7 @@ export const deviceSlice = createSlice({
   initialState: { ...initialState },
   reducers: {
     addDevice: (state, action) => {
-      const {
-        name,
-        location = DEFAULT_LOCATION,
-        plan = DEFAULT_PLAN,
-        pet,
-        power = false
-      } = action.payload;
+      const { name, location = DEFAULT_LOCATION, plan, pet, power = false } = action.payload;
 
       state.devices = [
         ...state.devices,
@@ -53,6 +48,6 @@ export const deviceSlice = createSlice({
   }
 });
 
-export const { addDevice, removeDevice } = deviceSlice.actions;
+export const { addDevice, removeDevice, updateDevice } = deviceSlice.actions;
 
 export default deviceSlice.reducer;

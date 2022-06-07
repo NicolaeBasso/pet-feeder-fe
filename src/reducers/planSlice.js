@@ -51,6 +51,6 @@ export const planSlice = createSlice({
   }
 });
 
-export const { addPlan, removePlan } = planSlice.actions;
+export const { addPlan, removePlan, updatePlan } = planSlice.actions;
 
 export default planSlice.reducer;

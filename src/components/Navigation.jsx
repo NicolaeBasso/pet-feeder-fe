@@ -16,26 +16,30 @@ export const Navigation = (props) => {
         <ul className="nav">
           <li>
             <Box ml={2} fullWidth width="100%">
-              <Button
-                className="menu_button"
-                href="/pets"
-                fullWidth
-                variant="contained"
-                type="submit">
-                Pets
-              </Button>
+              <Link to="/pets">
+                <Button
+                  className="menu_button"
+                  // href="/pets"
+                  fullWidth
+                  variant="contained"
+                  type="submit">
+                  Pets
+                </Button>
+              </Link>
             </Box>
           </li>
           <li>
             <Box ml={2} width="100%">
-              <Button
-                className="menu_button"
-                href="/devices"
-                fullWidth
-                variant="contained"
-                type="submit">
-                Devices
-              </Button>
+              <Link to="/devices">
+                <Button
+                  className="menu_button"
+                  // href="/devices"
+                  fullWidth
+                  variant="contained"
+                  type="submit">
+                  Devices
+                </Button>
+              </Link>
             </Box>
           </li>
           <li>

@@ -17,10 +17,6 @@ import { createRoot } from 'react-dom/client';
 const container = document.getElementById('app');
 const root = createRoot(container);
 
-console.log(UUIDGeneratorBrowser());
-console.log(UUIDGeneratorBrowser());
-console.log(UUIDGeneratorBrowser());
-
 root.render(
   <Provider store={store}>
     <BrowserRouter>
