@@ -59,11 +59,13 @@ export const DEFAULT_DEVICES = [
 
 export const DEFAULT_PETS = [
   {
+    id: '3bcd4715-9a6f-4d01-aa1b-6188bcce8ffe',
     name: 'Haiko',
-    device: 'Haiko device'
+    deviceId: 'aa6b7a45-1a20-4eb0-8229-0b6882dac4ad'
   },
   {
+    id: '613ac5bf-5350-4831-ab1b-3aeb3d660ba5',
     name: 'Bella',
-    device: 'Bellas device'
+    deviceId: '502d65cc-6e7b-473e-b0f6-6d678f808374'
   }
 ];

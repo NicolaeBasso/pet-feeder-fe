@@ -57,12 +57,9 @@ export const DeviceListItem = ({ device }) => {
               id="combo-box-demo"
               options={DEFAULT_PLANS.map((plan) => plan.name)}
               onChange={(e) => {
-                console.log('text = ', e.target.textContent);
                 const selected = plans.filter((el) => {
-                  console.log(el);
                   return el.name === e.target.outerText;
                 });
-                console.log('selected = ', selected[0]);
 
                 dispatch(updateDevice({ ...device, plan: plans.length ? selected[0] : null }));
               }}

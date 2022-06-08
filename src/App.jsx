@@ -16,12 +16,9 @@ function App(props) {
   const state = useSelector((state) => state);
   const [logged, setLogged] = useState(state.user.logged);
 
-  useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem('state')));
-  }, [state]);
+  useEffect(() => {}, [state]);
 
   useEffect(() => {
-    console.log('APP logged = ', state.user.logged);
     setLogged(state.user.logged);
   }, [state.user.logged]);
 
@@ -31,10 +28,8 @@ function App(props) {
 
   if (!logged && window.location.pathname === '/logout') window.location.pathname = '/';
 
-  console.log(logged);
   if (!logged) return <Login />;
 
-  // if (window.location.pathname !== '/') window.location.pathname = '/';
   return (
     <div className="App">
       <Box>
