@@ -7,15 +7,13 @@ import deviceLogo from '../icons/logo1.png';
 export const Navigation = (props) => {
   return (
     <div className="App inline-block">
-      {/* <p className="text-red-800">Logged (localStorage) = {localStorage.getItem('logged')}</p>
-      <p className="text-red-800">App navigration:</p> */}
       <Container>
-        <Box className="logo" ml={3} sx={{ pt: 0 }}>
+        <Box className="logo">
           <img src={deviceLogo} />
         </Box>
         <ul className="nav">
           <li>
-            <Box ml={2} fullWidth width="100%">
+            <Box ml={1} width="100%">
               <Link to="/pets">
                 <Button
                   style={{

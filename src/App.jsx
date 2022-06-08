@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { Box } from '@mui/material';
 import { useDebugValue, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Navigate, Route, useNavigate } from 'react-router-dom';
@@ -36,17 +37,19 @@ function App(props) {
   // if (window.location.pathname !== '/') window.location.pathname = '/';
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Devices />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/pets" element={<Pets />} />
-          <Route path="/devices" element={<Devices />} />
-          <Route path="/plans" element={<Plans />} />
-          <Route path="*" element={<Devices />} />
-        </Routes>
-      </BrowserRouter>
+      <Box>
+        <BrowserRouter>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Devices />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/pets" element={<Pets />} />
+            <Route path="/devices" element={<Devices />} />
+            <Route path="/plans" element={<Plans />} />
+            <Route path="*" element={<Devices />} />
+          </Routes>
+        </BrowserRouter>
+      </Box>
     </div>
   );
 }

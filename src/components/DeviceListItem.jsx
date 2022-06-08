@@ -17,7 +17,7 @@ export const DeviceListItem = ({ device }) => {
 
   return (
     <>
-      <div className="max-w-xl w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">
+      <div className="max-width: 0rem;shadow-lg p-4 inline-block md:flex-row flex-col">
         <div className="flex-1">
           <li className=" m-2 px-3 pt-3">
             <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
@@ -50,7 +50,7 @@ export const DeviceListItem = ({ device }) => {
               }}
             />
           </li>
-          <li className=" capitalize text-xl font-bold m-2 px-3 pt-3">
+          <li className=" capitalize text-xl font-bold m-2 px-3 pt-3 ">
             <Autocomplete
               value={device.plan?.name}
               disablePortal
@@ -73,7 +73,7 @@ export const DeviceListItem = ({ device }) => {
             />
           </li>
         </div>
-        <div className="md:px-2 mt-3 md:mt-0 items-center flex">
+        <div className="md:px-2 mt-3 md:mt-0">
           <Link
             className="inline-block  mx-5 mb-4 px-2 py-2 rounded-md"
             to={`/plans/${device.id}/`}>

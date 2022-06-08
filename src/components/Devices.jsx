@@ -12,12 +12,10 @@ export const Devices = () => {
     <>
       <div>
         <Typography>Your devices</Typography>
-        <ul className="devicesList">
-          <Card variant="outlined">
-            {devices?.map((device) => (
-              <DeviceListItem key={device.id} device={device} />
-            ))}
-          </Card>
+        <ul className="deviceCard">
+          {devices?.map((device) => (
+            <DeviceListItem key={device.id} device={device} />
+          ))}
         </ul>
       </div>
     </>
