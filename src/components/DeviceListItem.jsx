@@ -1,15 +1,13 @@
-import React from 'react';
-import deviceImg from '../icons/device.png';
-import { Box, Button, Container, Grid, Pagination, Typography } from '@mui/material';
-import { useState } from 'react';
+import { Button, Typography } from '@mui/material';
+import Autocomplete from '@mui/material/Autocomplete';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateDevice } from '../reducers/deviceSlice';
+import { Link } from 'react-router-dom';
 import { DEFAULT_LOCATIONS, DEFAULT_PLANS } from '../constants';
+import { updateDevice } from '../reducers/deviceSlice';
 
 export const DeviceListItem = ({ device }) => {
   const dispatch = useDispatch();

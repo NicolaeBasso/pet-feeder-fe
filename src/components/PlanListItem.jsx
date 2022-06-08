@@ -1,14 +1,10 @@
-import React from 'react';
-import { Box, Button, Container, Grid, Pagination, Typography } from '@mui/material';
-import { useState } from 'react';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
-import { Link } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { DEFAULT_PLANS, DEFAULT_SCHEDULES } from '../constants';
 import { updatePlan } from '../reducers/planSlice';
-import { DEFAULT_LOCATIONS, DEFAULT_PLANS } from '../constants';
 
 export const PlanListItem = ({ plan }) => {
   const dispatch = useDispatch();
@@ -23,58 +19,40 @@ export const PlanListItem = ({ plan }) => {
               {plan.name}
             </Typography>
           </li>
-          <li
-            className=" capitalize text-xl font-bold m-2 px-3 pt-3"
-            onChange={() => dispatch(updatePlan({ ...plan, power: !plan.power }))}>
-            <FormControlLabel
-              sx={{
-                display: 'block'
-              }}
-              control={<Switch checked={plan.power} name="loading" color="primary" />}
-              label="Power"
-            />
-          </li>
           <li className="capitalize text-xl font-bold m-2 px-3 pt-3">
             <Autocomplete
-              value={plan.location}
+              value={plan.scheduleTime}
               disablePortal
               id="combo-box-demo"
-              options={DEFAULT_LOCATIONS}
+              options={DEFAULT_SCHEDULES}
               onChange={(e) => {
-                dispatch(updatePlan({ ...plan, location: e.target.textContent }));
+                dispatch(updatePlan({ ...plan, scheduleTime: e.target.textContent }));
               }}
               sx={{ width: 300 }}
               renderInput={(params) => {
-                return <TextField {...params} label="Location" />;
+                return <TextField {...params} label="Food Supply Frequency" />;
               }}
             />
           </li>
           <li className=" capitalize text-xl font-bold m-2 px-3 pt-3 ">
             <Autocomplete
-              value={plan.plan?.name}
+              value={plan?.amount}
               disablePortal
               id="combo-box-demo"
-              options={DEFAULT_PLANS.map((plan) => plan.name)}
+              options={DEFAULT_PLANS.map((plan) => plan.amount.toString())}
               onChange={(e) => {
-                const selected = plans.filter((el) => {
-                  return el.name === e.target.outerText;
+                const selected = plans.find((el) => {
+                  return el.amount === e.target.outerText;
                 });
 
-                dispatch(updatePlan({ ...plan, plan: plans.length ? selected[0] : null }));
+                dispatch(updatePlan({ ...plan, amount: e.target.outerText }));
               }}
               sx={{ width: 300 }}
               renderInput={(params) => {
-                return <TextField {...params} label="Plan" />;
+                return <TextField {...params} label="Times" />;
               }}
             />
           </li>
-        </div>
-        <div className="md:px-2 mt-3 md:mt-0">
-          <Link className="inline-block  mx-5 mb-4 px-2 py-2 rounded-md" to={`/plans/${plan}/`}>
-            <Button fullWidth variant="contained" type="submit">
-              See plan
-            </Button>
-          </Link>
         </div>
       </div>
     </>

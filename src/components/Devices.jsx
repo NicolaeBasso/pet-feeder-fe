@@ -1,9 +1,8 @@
 // import { Box } from '@mui/system';
+import { Typography } from '@mui/material';
 import React from 'react';
-import { Box, Button, Container, Grid, Pagination, Card, Typography } from '@mui/material';
+import { useSelector } from 'react-redux';
 import { DeviceListItem } from './DeviceListItem';
-import deviceImg from '../icons/device.png';
-import { useSelector, useDispatch } from 'react-redux';
 
 export const Devices = () => {
   const devices = useSelector((state) => state.device.devices);

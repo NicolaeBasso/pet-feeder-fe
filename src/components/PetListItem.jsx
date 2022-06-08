@@ -1,12 +1,10 @@
-import React from 'react';
-import deviceImg from '../icons/device.png';
-import { Box, Button, Container, Grid, Pagination, Typography } from '@mui/material';
-import { useState } from 'react';
-import { DEFAULT_DEVICES, DEFAULT_PETS } from '../constants';
-import TextField from '@mui/material/TextField';
 import EditIcon from '@mui/icons-material/Edit';
+import { Box, Typography } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { DEFAULT_DEVICES } from '../constants';
 import { updatePet } from '../reducers/petSlice';
 
 export const PetListItem = ({ pet }) => {

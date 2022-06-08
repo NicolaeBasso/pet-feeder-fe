@@ -1,9 +1,9 @@
+import { Box, Button, Container } from '@mui/material';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Bell } from '../icons/bell';
-import { Search } from '../icons/search';
-import { Box, Button, Container, Grid, Pagination, Typography } from '@mui/material';
 import deviceLogo from '../icons/logo1.png';
-import { useSelector } from 'react-redux';
+import { Search } from '../icons/search';
 
 export const Navigation = (props) => {
   const logged = useSelector((state) => state.user.logged);

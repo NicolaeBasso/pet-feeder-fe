@@ -1,8 +1,8 @@
 // import { Box } from '@mui/system';
+import { Typography } from '@mui/material';
 import React from 'react';
-import { Box, Button, Container, Grid, Pagination, Card, Typography } from '@mui/material';
+import { useSelector } from 'react-redux';
 import { PlanListItem } from './PlanListItem';
-import { useSelector, useDispatch } from 'react-redux';
 
 export const Plans = () => {
   const plans = useSelector((state) => state.plan.plans);

@@ -16,6 +16,7 @@ export const SCHEDULE_TIME = [
 ];
 export const DEFAULT_LOCATION = 'Main';
 export const DEFAULT_LOCATIONS = ['Main', 'Kitchen', 'Garage', 'Balcony'];
+export const DEFAULT_SCHEDULES = [21600, 43200, 64800];
 
 export const DEFAULT_MENU = {
   id: '43c64ee1-ffba-427c-bd07-c1728e122eb4',
@@ -28,12 +29,14 @@ export const DEFAULT_PLANS = [
     id: 'adeebbdb-8f16-4b3f-9189-e86df7cd228d',
     name: 'Standard-3t-6h',
     amount: 3,
+    scheduleTime: DEFAULT_SCHEDULES[0],
     menu: DEFAULT_MENU
   },
   {
     id: 'f3c7fcba-7afe-4906-90fe-eac6e90f25d1',
     name: 'Standard-2t-8h',
     amount: 2,
+    scheduleTime: DEFAULT_SCHEDULES[2],
     menu: DEFAULT_MENU
   }
 ];
