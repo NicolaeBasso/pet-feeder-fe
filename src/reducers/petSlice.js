@@ -3,26 +3,26 @@ import { UUIDGeneratorBrowser } from '../utils';
 import { DEFAULT_PETS } from '../constants';
 
 const initialState = {
-  devices: DEFAULT_PETS
+  pets: DEFAULT_PETS
 };
 
-export const deviceSlice = createSlice({
+export const petSlice = createSlice({
   name: 'pet',
   initialState: { ...initialState },
   reducers: {
-    addDevice: (state, action) => {
+    addPet: (state, action) => {
       const { name = DEFAULT_PETS } = action.payload;
 
-      state.devices = [...state.devices, { id: UUIDGeneratorBrowser(), name }];
+      state.pets = [...state.pets, { id: UUIDGeneratorBrowser(), name }];
     },
 
     updatePet: (state, action) => {
-      const { id, name = state.name, device = state.device } = action.payload;
+      const { id, name = state.name, deviceId = state.deviceId } = action.payload;
 
       state.pets.forEach((pet) => {
         if (pet.id === id) {
           pet.name = name;
-          pet.device = device;
+          pet.deviceId = deviceId;
         }
       });
     },
@@ -30,11 +30,11 @@ export const deviceSlice = createSlice({
     removePet: (state, action) => {
       const { id } = action.payload;
 
-      state.pets = [...state.devices.filter((pet) => pet.id !== id)];
+      state.pets = [...state.pets.filter((pet) => pet.id !== id)];
     }
   }
 });
 
-export const { addPet, removePet, updateDevice } = deviceSlice.actions;
+export const { addPet, removePet, updatePet } = petSlice.actions;
 
-export default deviceSlice.reducer;
+export default petSlice.reducer;

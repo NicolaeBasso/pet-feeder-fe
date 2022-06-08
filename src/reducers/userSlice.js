@@ -16,8 +16,6 @@ export const userSlice = createSlice({
   initialState: { ...initialState },
   reducers: {
     login: (state, action) => {
-      console.log('login state = ', state);
-
       const { email = '' } = { ...action.payload };
 
       state.id = UUIDGeneratorBrowser();
@@ -27,17 +25,10 @@ export const userSlice = createSlice({
     },
 
     logout: (state) => {
-      console.log('logout state = ', state);
-      console.log(JSON.parse(localStorage.getItem('state')).user);
-
-      // this didn't work at all for some reason
-      // state = { ...initialState };
-
       state.logged = false;
       state.email = null;
       state.id = null;
 
-      console.log(state);
       localStorage.setItem('logged', '0');
     }
   }
