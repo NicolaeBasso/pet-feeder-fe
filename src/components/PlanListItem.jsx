@@ -70,7 +70,7 @@ export const PlanListItem = ({ plan }) => {
           </li>
         </div>
         <div className="md:px-2 mt-3 md:mt-0">
-          <Link className="inline-block  mx-5 mb-4 px-2 py-2 rounded-md" to={`/plans/${plan.id}/`}>
+          <Link className="inline-block  mx-5 mb-4 px-2 py-2 rounded-md" to={`/plans/${plan}/`}>
             <Button fullWidth variant="contained" type="submit">
               See plan
             </Button>
