@@ -6,7 +6,6 @@ import { DEFAULT_PETS } from '../constants';
 import PetList from './DeviceList';
 
 const PetsListItem = ({ pet }) => {
-
   return (
     <>
       <div className="bg-green-200 max-w-xl w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">

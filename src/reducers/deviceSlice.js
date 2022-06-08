@@ -31,6 +31,8 @@ export const deviceSlice = createSlice({
 
       state.devices.forEach((device) => {
         if (device.id === id) {
+          console.log('reducer plan = ', plan);
+
           device.name = name;
           device.location = location;
           device.plan = plan;

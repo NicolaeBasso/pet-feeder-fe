@@ -10,11 +10,11 @@ import { login, logout } from '../reducers/userSlice';
 import { Link } from 'react-router-dom';
 
 export const Login = () => {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [logged, setLogged] = useState(localStorage.getItem('logged') === 'true');
+  // const [logged, setLogged] = useState(localStorage.getItem('logged') === 'true');
 
   const onChange = (e) => {
     if (e.target.name === 'email') setEmail(e.target.value);
@@ -24,20 +24,14 @@ export const Login = () => {
   const onLogin = () => {
     users.find((user) => {
       if (user.email === email && user.password === password) {
-        localStorage.setItem('logged', 'true');
-        setLogged(true);
+        // localStorage.setItem('logged', '1');
         dispatch(login({ email: user.email }));
       } else {
-        localStorage.setItem('logged', 'false');
-        setLogged(false);
+        // localStorage.setItem('logged', '0');
         dispatch(logout());
       }
     });
   };
-
-  useEffect(() => {
-    if (logged) navigate('/');
-  }, [logged]);
 
   return (
     <Grid
@@ -56,13 +50,14 @@ export const Login = () => {
           flexDirection: 'column'
         }}
         noValidate
-        autoComplete
-        autofocus>
+        autoComplete="true"
+        autoFocus>
         <h1 className="text-center text-2xl" style={{ width: 'auto' }}>
           Login
         </h1>
         <TextField
           id="login-email"
+          type="email"
           name="email"
           required
           label="Email"
@@ -72,11 +67,11 @@ export const Login = () => {
         />
         <TextField
           id="login-password"
+          type="password"
           name="password"
           required
           label="Password"
           variant="filled"
-          type="password"
           value={password}
           onChange={onChange}
         />
@@ -86,11 +81,15 @@ export const Login = () => {
           </Button>
         </Grid>
         <Typography ml={15}>
-          <Link to="#">Forgot password?</Link>
+          {/* <Link to="/">Forgot password?</Link>
+           */}
+          <a href="/reset">Forgot password?</a>
         </Typography>
         <Typography>
           {' '}
-          Need a new account? <Link to="#">Sign Up</Link>
+          {/* Need a new account? <Link to="#">Sign Up</Link>
+           */}
+          <a href="/register">Need a new account?</a>
         </Typography>
       </Box>
     </Grid>
