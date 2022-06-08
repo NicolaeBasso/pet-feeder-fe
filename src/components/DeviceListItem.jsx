@@ -16,13 +16,15 @@ const DeviceListItem = ({ device }) => {
 
   return (
     <>
-      <div className="bg-green-200 max-w-xl w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">
+      <div className="max-w-xl w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">
         <div className="flex-1">
-          <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
-            {device.name}
+          <li className=" m-2 px-3 pt-3">
+            <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
+              {device.name}
+            </Typography>
           </li>
           <li
-            className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3"
+            className=" capitalize text-xl font-bold m-2 px-3 pt-3"
             onChange={() => dispatch(updateDevice({ ...device, power: !device.power }))}>
             <FormControlLabel
               sx={{
@@ -32,7 +34,7 @@ const DeviceListItem = ({ device }) => {
               label="Power"
             />
           </li>
-          <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
+          <li className="capitalize text-xl font-bold m-2 px-3 pt-3">
             <Autocomplete
               value={device.location}
               disablePortal
@@ -48,7 +50,7 @@ const DeviceListItem = ({ device }) => {
               }}
             />
           </li>
-          <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
+          <li className=" capitalize text-xl font-bold m-2 px-3 pt-3">
             <Autocomplete
               value={device.plan?.name}
               disablePortal
@@ -68,9 +70,11 @@ const DeviceListItem = ({ device }) => {
         </div>
         <div className="md:px-2 mt-3 md:mt-0 items-center flex">
           <Link
-            className="inline-block bg-indigo-800 border-solid border-2 border-light-blue-500 mx-5 mb-4 px-2 py-2 rounded-md"
+            className="inline-block  mx-5 mb-4 px-2 py-2 rounded-md"
             to={`/plans/${device.id}/`}>
-            <button className="text-white capitalize text-m m-2 px-3 ">See plan</button>
+            <Button fullWidth variant="contained" type="submit">
+              See plan
+            </Button>
           </Link>
         </div>
       </div>

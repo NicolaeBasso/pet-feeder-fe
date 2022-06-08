@@ -41,7 +41,7 @@ export const DEFAULT_PLANS = [
 export const DEFAULT_DEVICES = [
   {
     id: 'aa6b7a45-1a20-4eb0-8229-0b6882dac4ad',
-    name: 'Terminator',
+    name: 'Haiko device',
     power: true,
     pet: null,
     location: DEFAULT_LOCATION,
@@ -49,7 +49,7 @@ export const DEFAULT_DEVICES = [
   },
   {
     id: '502d65cc-6e7b-473e-b0f6-6d678f808374',
-    name: 'Le Wellness Place',
+    name: 'Gingers device',
     power: true,
     pet: null,
     location: null,
@@ -57,4 +57,13 @@ export const DEFAULT_DEVICES = [
   }
 ];
 
-export const DEFAULT_PETS = [];
+export const DEFAULT_PETS = [
+  {
+    name: 'Haiko',
+    device: 'Haiko device'
+  },
+  {
+    name: 'Bella',
+    device: 'Bellas device'
+  }
+];

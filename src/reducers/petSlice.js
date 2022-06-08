@@ -1,18 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { UUIDGeneratorBrowser } from '../utils';
+import { DEFAULT_PETS } from '../constants';
 
 const initialState = {
-  pets: []
+  devices: DEFAULT_PETS
 };
 
-export const petSlice = createSlice({
+export const deviceSlice = createSlice({
   name: 'pet',
   initialState: { ...initialState },
   reducers: {
-    addPet: (state, action) => {
-      const { name } = action.payload;
+    addDevice: (state, action) => {
+      const { name = DEFAULT_PETS } = action.payload;
 
-      state.pets = [...state.pets, { id: UUIDGeneratorBrowser(), name }];
+      state.devices = [...state.devices, { id: UUIDGeneratorBrowser(), name }];
     },
 
     updatePet: (state, action) => {
@@ -29,11 +30,11 @@ export const petSlice = createSlice({
     removePet: (state, action) => {
       const { id } = action.payload;
 
-      state.pets = [...state.pets.filter((pet) => pet.id !== id)];
+      state.pets = [...state.devices.filter((pet) => pet.id !== id)];
     }
   }
 });
 
-export const { addPet, removePet, updatePet } = petSlice.actions;
+export const { addPet, removePet, updateDevice } = deviceSlice.actions;
 
-export default petSlice.reducer;
+export default deviceSlice.reducer;

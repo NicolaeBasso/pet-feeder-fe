@@ -18,8 +18,13 @@ export const Navigation = (props) => {
             <Box ml={2} fullWidth width="100%">
               <Link to="/pets">
                 <Button
+                  style={{
+                    borderRadius: 35,
+                    backgroundImage: 'linear-gradient(#427ef5, #42bcf5)',
+                    padding: '18px 36px',
+                    fontSize: '18px'
+                  }}
                   className="menu_button"
-                  // href="/pets"
                   fullWidth
                   variant="contained"
                   type="submit">
@@ -32,8 +37,13 @@ export const Navigation = (props) => {
             <Box ml={2} width="100%">
               <Link to="/devices">
                 <Button
+                  style={{
+                    borderRadius: 35,
+                    backgroundImage: 'linear-gradient(#427ef5, #42bcf5)',
+                    padding: '18px 36px',
+                    fontSize: '18px'
+                  }}
                   className="menu_button"
-                  // href="/devices"
                   fullWidth
                   variant="contained"
                   type="submit">
@@ -44,38 +54,60 @@ export const Navigation = (props) => {
           </li>
           <li>
             <Box ml={2} width="100%">
-              <Button
-                className="menu_button"
-                href="/plans"
-                fullWidth
-                variant="contained"
-                type="submit">
-                Feeding plan
-              </Button>
+              <Link to="/plans">
+                <Button
+                  style={{
+                    borderRadius: 35,
+                    backgroundImage: 'linear-gradient(#427ef5, #42bcf5)',
+                    padding: '18px 36px',
+                    fontSize: '18px'
+                  }}
+                  className="menu_button"
+                  fullWidth
+                  variant="contained"
+                  type="submit">
+                  Feeding plan
+                </Button>
+              </Link>
             </Box>
           </li>
           <li>
             <Box ml={2} width="100%">
-              <Button
-                className="menu_button"
-                href="/login"
-                fullWidth
-                variant="contained"
-                type="submit">
-                Login
-              </Button>
+              <Link to="/login">
+                <Button
+                  style={{
+                    borderRadius: 35,
+                    backgroundImage: 'linear-gradient(#427ef5, #42bcf5)',
+                    // backgroundColor: '#21b6ae',
+                    padding: '18px 36px',
+                    fontSize: '18px'
+                  }}
+                  className="menu_button"
+                  fullWidth
+                  variant="contained"
+                  type="submit">
+                  Login
+                </Button>
+              </Link>
             </Box>
           </li>
           <li>
             <Box ml={2} width="100%">
-              <Button
-                className="menu_button"
-                href="/logout"
-                fullWidth
-                variant="contained"
-                type="submit">
-                Logout
-              </Button>
+              <Link to="/logout">
+                <Button
+                  style={{
+                    borderRadius: 35,
+                    backgroundImage: 'linear-gradient(#427ef5, #42bcf5)',
+                    padding: '18px 36px',
+                    fontSize: '18px'
+                  }}
+                  className="menu_button"
+                  fullWidth
+                  variant="contained"
+                  type="submit">
+                  Logout
+                </Button>
+              </Link>
             </Box>
           </li>
           <li>
