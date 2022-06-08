@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { UUIDGeneratorBrowser } from '../utils';
 
-// const initialState = {
-//   id: null,
-//   email: null,
-//   logged: localStorage.getItem('logged') == '1' ? true : false
-// };
-
 const initialState = {
-  ...JSON.parse(localStorage.getItem('state')).user
+  id: null,
+  email: null,
+  logged: localStorage.getItem('logged') == '1' ? true : false
 };
+
+// const initialState = {
+//   ...JSON.parse(localStorage.getItem('state')).user
+// };
 
 export const userSlice = createSlice({
   name: 'user',
