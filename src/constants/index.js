@@ -54,6 +54,14 @@ export const DEFAULT_DEVICES = [
     pet: null,
     location: null,
     plan: DEFAULT_PLANS[0]
+  },
+  {
+    id: '502d65cc-6e7b-473e-b0f6-6d678f808374',
+    name: 'Bellas device',
+    power: true,
+    pet: null,
+    location: null,
+    plan: DEFAULT_PLANS[0]
   }
 ];
 
@@ -63,7 +71,7 @@ export const DEFAULT_PETS = [
     device: 'Haiko device'
   },
   {
-    name: 'Bella',
-    device: 'Bellas device'
+    name: 'Ginger',
+    device: 'Gingers device'
   }
 ];
