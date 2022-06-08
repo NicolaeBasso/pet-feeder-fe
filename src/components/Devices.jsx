@@ -31,8 +31,6 @@ import { useSelector, useDispatch } from 'react-redux';
 export const Devices = () => {
   const devices = useSelector((state) => state.device.devices);
 
-  console.log(devices);
-
   return (
     <>
       <div>

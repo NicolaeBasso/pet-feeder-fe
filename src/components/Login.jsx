@@ -9,11 +9,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { login, logout } from '../reducers/userSlice';
 
 export const Login = () => {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [logged, setLogged] = useState(localStorage.getItem('logged') === 'true');
+  // const [logged, setLogged] = useState(localStorage.getItem('logged') === 'true');
 
   const onChange = (e) => {
     if (e.target.name === 'email') setEmail(e.target.value);
@@ -23,20 +23,14 @@ export const Login = () => {
   const onLogin = () => {
     users.find((user) => {
       if (user.email === email && user.password === password) {
-        localStorage.setItem('logged', 'true');
-        setLogged(true);
+        // localStorage.setItem('logged', '1');
         dispatch(login({ email: user.email }));
       } else {
-        localStorage.setItem('logged', 'false');
-        setLogged(false);
+        // localStorage.setItem('logged', '0');
         dispatch(logout());
       }
     });
   };
-
-  useEffect(() => {
-    if (logged) navigate('/');
-  }, [logged]);
 
   return (
     <Grid
@@ -60,6 +54,7 @@ export const Login = () => {
         </h1>
         <TextField
           id="login-email"
+          type="email"
           name="email"
           label="Email"
           variant="filled"
@@ -68,6 +63,7 @@ export const Login = () => {
         />
         <TextField
           id="login-password"
+          type="password"
           name="password"
           label="Password"
           variant="filled"

@@ -19,16 +19,6 @@ const root = createRoot(container);
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/pets" element={<Pets />} />
-        <Route path="/devices" element={<Devices />} />
-        <Route path="/plans" element={<Plans />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </Provider>
 );

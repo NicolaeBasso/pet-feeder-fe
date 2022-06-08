@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { UUIDGeneratorBrowser } from '../utils';
-import { SCHEDULE_TIME, DEFAULT_MENU } from '../constants';
+import { SCHEDULE_TIME, DEFAULT_MENU, DEFAULT_PLANS } from '../constants';
 
 const initialState = {
-  plans: []
+  plans: DEFAULT_PLANS
 };
 
 export const planSlice = createSlice({

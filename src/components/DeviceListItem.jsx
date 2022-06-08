@@ -13,6 +13,7 @@ import { DEFAULT_LOCATIONS, DEFAULT_PLANS } from '../constants';
 
 const DeviceListItem = ({ device }) => {
   const dispatch = useDispatch();
+  const plans = useSelector((state) => state.plan.plans);
 
   return (
     <>
@@ -43,7 +44,6 @@ const DeviceListItem = ({ device }) => {
               }}
               sx={{ width: 300 }}
               renderInput={(params) => {
-                console.log(params);
                 return <TextField {...params} label="Location" />;
               }}
             />
@@ -55,12 +55,17 @@ const DeviceListItem = ({ device }) => {
               id="combo-box-demo"
               options={DEFAULT_PLANS.map((plan) => plan.name)}
               onChange={(e) => {
-                console.log(e);
-                dispatch(updateDevice({ ...device, plan: e.target.textContent }));
+                console.log('text = ', e.target.textContent);
+                const selected = plans.filter((el) => {
+                  console.log(el);
+                  return el.name === e.target.outerText;
+                });
+                console.log('selected = ', selected[0]);
+
+                dispatch(updateDevice({ ...device, plan: plans.length ? selected[0] : null }));
               }}
               sx={{ width: 300 }}
               renderInput={(params) => {
-                console.log(params);
                 return <TextField {...params} label="Plan" />;
               }}
             />

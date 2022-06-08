@@ -1,9 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { UUIDGeneratorBrowser } from '../utils';
 
+// const initialState = {
+//   id: null,
+//   email: null,
+//   logged: localStorage.getItem('logged') == '1' ? true : false
+// };
+
 const initialState = {
-  email: '',
-  logged: localStorage.getItem('logged' === 'true') ? true : false
+  ...JSON.parse(localStorage.getItem('state')).user
 };
 
 export const userSlice = createSlice({
@@ -11,15 +16,29 @@ export const userSlice = createSlice({
   initialState: { ...initialState },
   reducers: {
     login: (state, action) => {
-      const { email } = { ...action.payload, id: UUIDGeneratorBrowser() };
+      console.log('login state = ', state);
 
+      const { email = '' } = { ...action.payload };
+
+      state.id = UUIDGeneratorBrowser();
       state.email = email;
       state.logged = true;
+      localStorage.setItem('logged', '1');
     },
 
     logout: (state) => {
-      state = { ...initialState };
+      console.log('logout state = ', state);
+      console.log(JSON.parse(localStorage.getItem('state')).user);
+
+      // this didn't work at all for some reason
+      // state = { ...initialState };
+
       state.logged = false;
+      state.email = null;
+      state.id = null;
+
+      console.log(state);
+      localStorage.setItem('logged', '0');
     }
   }
 });
