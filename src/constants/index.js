@@ -72,7 +72,7 @@ export const DEFAULT_PETS = [
     deviceId: 'aa6b7a45-1a20-4eb0-8229-0b6882dac4ad'
   },
   {
-    id: '3bcd4715-9a6f-4d01-aa1b-6188bcce8ffe',
+    id: '3bcd4715-9a6f-4d01-aa1b-6188bcceffe',
     name: 'Ginger',
     device: 'Gingers device'
   }
