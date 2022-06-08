@@ -16,8 +16,7 @@ export const PetListItem = ({ pet }) => {
 
   const devices = useSelector((state) => state.device.devices);
   const petDevice = devices.find((el) => el.id === pet.deviceId);
-  const petDeviceId = petDevice.id;
-  const petDeviceName = petDevice.name;
+  const petDeviceName = petDevice?.name;
 
   return (
     <>
