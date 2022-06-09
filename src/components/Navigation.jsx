@@ -17,7 +17,7 @@ export const Navigation = (props) => {
         <ul className="nav">
           <li>
             <Box ml={1} width="100%">
-              <Link to="/pets">
+              <Link to="/pets" style={{ textDecoration: 'none' }}>
                 <Button
                   style={{
                     borderRadius: 35,
@@ -36,7 +36,7 @@ export const Navigation = (props) => {
           </li>
           <li>
             <Box ml={2} width="100%">
-              <Link to="/devices">
+              <Link to="/devices" style={{ textDecoration: 'none' }}>
                 <Button
                   style={{
                     borderRadius: 35,
@@ -55,7 +55,7 @@ export const Navigation = (props) => {
           </li>
           <li>
             <Box ml={2} width="100%">
-              <Link to="/plans">
+              <Link to="/plans" style={{ textDecoration: 'none' }}>
                 <Button
                   style={{
                     borderRadius: 35,
@@ -75,7 +75,7 @@ export const Navigation = (props) => {
           {!logged && (
             <li>
               <Box ml={2} width="100%">
-                <Link to="/login">
+                <Link to="/login" style={{ textDecoration: 'none' }}>
                   <Button
                     style={{
                       borderRadius: 35,
@@ -97,7 +97,7 @@ export const Navigation = (props) => {
           {logged && (
             <li>
               <Box ml={2} width="100%">
-                <Link to="/logout">
+                <Link to="/logout" style={{ textDecoration: 'none' }}>
                   <Button
                     style={{
                       borderRadius: 35,

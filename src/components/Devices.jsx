@@ -9,7 +9,7 @@ export const Devices = () => {
 
   return (
     <>
-      <div>
+      <div className="App">
         <ul className="deviceCard">
           {devices?.map((device) => (
             <DeviceListItem key={device.id} device={device} />

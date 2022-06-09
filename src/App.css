@@ -14,7 +14,9 @@ $card-small-height: 100px;
 a {
   text-decoration: underline;
 }
-
+.App {
+  /* background-color: #0003; */
+}
 .petComponent {
   box-sizing: border-box;
   display: flex;
@@ -22,7 +24,8 @@ a {
   top: 30%;
   left: 25%;
   border-radius: 33px;
-  background-color: rgb(169, 255, 198);
+  /* background-color: rgb(169, 255, 198); */
+  background-image: linear-gradient(to bottom, #deff72, #e9dde7);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   background-clip: padding-box;
   overflow: hidden;
@@ -34,11 +37,6 @@ a {
     height 325ms 75ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pet_logo {
-  display: flex;
-  position: relative;
-  max-width: 20%;
-}
 
 .logo {
   display: inline-block;
@@ -61,7 +59,8 @@ a {
   left: 25%;
   transform: translate(-5 0%, -50%);
   border-radius: 33px;
-  background-color: rgb(219, 251, 158);
+  /* background-color: rgb(251, 234, 158); */
+  background-image: linear-gradient(to bottom, #82caee, #f1f8b1);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   background-clip: padding-box;
   overflow: hidden;
@@ -78,10 +77,11 @@ a {
   display: inline-block;
   position: absolute;
   top: 30%;
-  left: 20%;
+  left: 18%;
   transform: translate(-5 0%, -50%);
   border-radius: 33px;
-  background-color: rgb(221, 245, 250);
+  /* background-color: rgb(221, 245, 250); */
+  background-image: linear-gradient(to bottom, #96dcff, #e9dde7);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   background-clip: padding-box;
   overflow: hidden;

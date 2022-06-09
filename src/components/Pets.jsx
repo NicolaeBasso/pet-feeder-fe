@@ -1,4 +1,3 @@
-// import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -9,7 +8,7 @@ export const Pets = () => {
 
   return (
     <>
-      <div>
+      <div className="App">
         <ul className="petComponent">
           {pets?.map((pet) => (
             <PetListItem key={pet.id} pet={pet} />
