@@ -11,7 +11,6 @@ export const Plans = () => {
   return (
     <>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Typography>Your plans</Typography>
         <ul className="planCard">
           {plans?.map((plan) => (
             <PlanListItem key={plan.id} plan={plan} />
