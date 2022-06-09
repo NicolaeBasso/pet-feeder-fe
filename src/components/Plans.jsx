@@ -11,7 +11,7 @@ export const Plans = () => {
   return (
     <>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <ul className="planCard">
+        <ul className="feedingPlanCard">
           {plans?.map((plan) => (
             <PlanListItem key={plan.id} plan={plan} />
           ))}
