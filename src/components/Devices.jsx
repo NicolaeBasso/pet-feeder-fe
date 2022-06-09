@@ -10,7 +10,6 @@ export const Devices = () => {
   return (
     <>
       <div>
-        <Typography>Your devices</Typography>
         <ul className="deviceCard">
           {devices?.map((device) => (
             <DeviceListItem key={device.id} device={device} />

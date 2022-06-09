@@ -10,8 +10,7 @@ export const Pets = () => {
   return (
     <>
       <div>
-        <Typography>Your pets</Typography>
-        <ul className="deviceCard">
+        <ul className="petComponent">
           {pets?.map((pet) => (
             <PetListItem key={pet.id} pet={pet} />
           ))}
