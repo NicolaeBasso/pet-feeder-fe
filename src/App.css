@@ -42,6 +42,7 @@ a {
   display: inline-block;
   margin-top: 2%;
   position: left;
+  border-radius: 17%;
   /* margin-left: 2%; */
 }
 
@@ -77,7 +78,7 @@ a {
   display: inline-block;
   position: absolute;
   top: 30%;
-  left: 18%;
+  left: 15%;
   transform: translate(-5 0%, -50%);
   border-radius: 33px;
   /* background-color: rgb(221, 245, 250); */

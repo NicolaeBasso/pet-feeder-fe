@@ -12,7 +12,7 @@ export const PlanListItem = ({ plan }) => {
 
   return (
     <>
-      <div className="max-width: 0rem;shadow-lg p-4 inline-block md:flex-row flex-col">
+      <div className="max-width: 0rem shadow-lg p-4 inline-block md:flex-row flex-col">
         <div className="flex-1">
           <li className=" m-2 px-3 pt-3">
             <Typography variant="h4" fontWeight="bold" mb={3} color="#4d89e9">

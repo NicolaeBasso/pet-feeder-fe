@@ -71,7 +71,8 @@ export const DeviceListItem = ({ device }) => {
         <div className="md:px-2 mt-3 md:mt-0">
           <Link
             className="inline-block  mx-5 mb-4 px-2 py-2 rounded-md"
-            to={`/plans/${device.id}/`}>
+            to={`/plans/${device.id}/`}
+            style={{ textDecoration: 'none' }}>
             <Button fullWidth variant="contained" type="submit">
               See plan
             </Button>

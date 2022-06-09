@@ -12,7 +12,7 @@ export const Navigation = (props) => {
     <div className="App inline-block">
       <Container>
         <Box className="logo">
-          <img src={deviceLogo} />
+          <img src={deviceLogo} className="logo" />
         </Box>
         <ul className="nav">
           <li>
