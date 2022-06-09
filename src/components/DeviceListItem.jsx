@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
@@ -15,13 +15,8 @@ export const DeviceListItem = ({ device }) => {
 
   return (
     <>
-      <div className="max-width: 0rem;shadow-lg p-4 inline-block md:flex-row flex-col">
+      <div className="shadow-lg p-4 inline-block md:flex-row flex-col">
         <div className="flex-1">
-          <li className=" m-2 px-3 pt-3">
-            <Typography variant="h4" fontWeight="bold" mb={3} color="#0096c7">
-              {device.name}
-            </Typography>
-          </li>
           <li
             className=" capitalize text-xl font-bold m-2 px-3 pt-3"
             onChange={() => dispatch(updateDevice({ ...device, power: !device.power }))}>

@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DEFAULT_DEVICES } from '../constants';
 import { updatePet } from '../reducers/petSlice';
+import { PetIcon } from '../icons/petIcon';
 
 export const PetListItem = ({ pet }) => {
   const dispatch = useDispatch();
@@ -18,11 +19,18 @@ export const PetListItem = ({ pet }) => {
 
   return (
     <>
-      <div className="bg-green-200 max-w-xl w-full rounded-lg shadow-lg p-4 flex md:flex-row flex-col">
+      <div className="shadow-lg p-4 flex md:flex-row flex-col">
         <div className="flex-1">
-          <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
+          <li className="inline-block capitalize text-xl font-bold m-1 px-3 ">
             {!isNameFocused ? (
-              <Box sx={{ display: 'flex', verticalAlign: 'middle' }}>
+              <Box
+                sx={{
+                  horizontalAlign: 'middle',
+                  verticalAlign: 'middle',
+                  display: 'block',
+                  width: '20%'
+                }}>
+                <PetIcon width={'40%'} sx={{ marginTop: '10px', marginLeft: '3px' }} />
                 <Typography
                   variant="h4"
                   fontWeight="bold"
@@ -47,7 +55,7 @@ export const PetListItem = ({ pet }) => {
               />
             )}
           </li>
-          <li className="text-purple-600 capitalize text-xl font-bold m-2 px-3 pt-3">
+          <li className="capitalize text-xl font-bold m-2 px-3 pt-3">
             <Autocomplete
               value={petDeviceName}
               disablePortal
