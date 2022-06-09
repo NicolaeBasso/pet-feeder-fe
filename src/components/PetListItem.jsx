@@ -70,7 +70,7 @@ export const PetListItem = ({ pet }) => {
               }}
               sx={{ width: 300 }}
               renderInput={(params) => {
-                return <TextField {...params} label="Plan" />;
+                return <TextField {...params} label="Device" />;
               }}
             />
           </li>
