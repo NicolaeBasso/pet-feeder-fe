@@ -59,7 +59,7 @@ export const DEFAULT_DEVICES = [
     plan: DEFAULT_PLANS[0]
   },
   {
-    id: '502d65cc-6e7b-473e-b0f6-6d678f808374',
+    id: '502d65cc-6e7b-473e-b0f6-6d678f808394',
     name: 'Bellas device',
     power: true,
     pet: null,

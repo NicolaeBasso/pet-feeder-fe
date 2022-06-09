@@ -27,7 +27,7 @@ export const PetListItem = ({ pet }) => {
                 sx={{
                   horizontalAlign: 'middle',
                   verticalAlign: 'middle',
-                  display: 'flex',
+                  display: 'flex-block',
                   width: '20%'
                 }}>
                 <PetIcon width={'40%'} sx={{ marginTop: '10px', marginLeft: '3px' }} />
@@ -41,7 +41,7 @@ export const PetListItem = ({ pet }) => {
                   }}>
                   {pet.name}
                 </Typography>
-                <EditIcon sx={{ marginTop: '10px', marginLeft: '3px' }} />
+                {/* <EditIcon sx={{ marginTop: '10px', marginLeft: '3px' }} /> */}
               </Box>
             ) : (
               <TextField
