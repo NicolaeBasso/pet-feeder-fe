@@ -27,7 +27,7 @@ export const PetListItem = ({ pet }) => {
                 sx={{
                   horizontalAlign: 'middle',
                   verticalAlign: 'middle',
-                  display: 'block',
+                  display: 'flex',
                   width: '20%'
                 }}>
                 <PetIcon width={'40%'} sx={{ marginTop: '10px', marginLeft: '3px' }} />
